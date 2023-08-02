@@ -7,7 +7,7 @@
 }
 @font-face {
     font-family: poppin;
-    src: url(./assets/font/PoppinsBlack.ttf);
+    src: url(../font/Poppins-Black.ttf);
 }
 *{
     font-family: poppin;
@@ -67,7 +67,7 @@ input{
     align-items: center;    
 }
 .container-item1,.container-item2{
-    width: 350px;
+    width: 400px;
     border-radius: 30px;
     box-shadow: 0 20px 30px 0 var(--shadow);
     margin: 10px; 
