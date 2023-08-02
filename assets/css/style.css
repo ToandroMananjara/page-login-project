@@ -84,6 +84,7 @@ input{
 }
 .admin,.customer{
     margin-bottom: 50px;
+    font-size: 18px;
 }
 .admin{
     color: var(--bleu);
