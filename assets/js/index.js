@@ -86,18 +86,17 @@ function test (email,mdp,list){
     })
     
 }
-let btnOk = []
-btnOk=document.querySelectorAll('.btn-ok')
-function clickOk(message){
-    btnOk.forEach(ok=>{
-        ok.addEventListener('click',function(){
+
+let btnOkAdmin = document.querySelector('.btn-ok-Admin')
+let btnOkCustomer = document.querySelector('.btn-ok-customer')
+function clickOk(btn,message){
+        btn.addEventListener('click',function(){
             message.style.display="none" 
             console.log('ok');
         })
-    })
 }
-clickOk(messageAdmin)
-clickOk(messageCustomer)
+clickOk(btnOkAdmin,messageAdmin)
+clickOk(btnOkCustomer,messageCustomer)
 
 
 let inputMailAdmin = document.getElementById('input-mail')

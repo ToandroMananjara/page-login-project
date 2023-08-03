@@ -212,3 +212,11 @@ form{
     transform: translate(-50%, -50%);
     text-align: center;
 }
+.btn-ok{
+    width: 100px;
+    background: var(--bleu);
+    color: var(--blanc);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+}
