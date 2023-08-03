@@ -23,7 +23,29 @@ const customer = [
     }
 ];
 
-
+function afficheMessage(container){
+    let message = document.createElement('div')
+    message.classList.add('message')
+    container.appendChild(message)
+}
+function test (email,mdp,list){
+    let i = 0
+    isAdminFound=false
+    while(i < list.length){
+        if(email.value==list[i].email){
+           if (mdp.value==list[i].mdp){
+            alert('Bievenue'+' '+email.value) 
+            isAdminFound = true
+            break
+        }
+            
+     }
+     i++
+    }
+ if(!isAdminFound){
+                   alert('Email ou mot de passe incorrect')
+    }
+}
 function inputVide(input){
     if(input.value===""){
         input.style.border="solid 1px red"
@@ -36,30 +58,13 @@ function inputVide(input){
 }
 let inputMailAdmin = document.getElementById('input-mail')
 let inputMdpAdmin = document.getElementById('input-mdp')
-// console.log(inputMdpAdmin)
-let ok
-let no
+
 let btnAdmin = document.getElementById('btn-admin')
 btnAdmin.addEventListener('click',function(){
     inputVide(inputMailAdmin)
     inputVide(inputMdpAdmin)
     setTimeout(function(){
-        let i=0
-        let isAdminFound = false
-        while(i < admin.length){
-            if(inputMailAdmin.value==admin[i].email){
-               if (inputMdpAdmin.value==admin[i].mdp){
-                alert('Bievenue'+' '+inputMailAdmin.value) 
-                isAdminFound = true
-                break
-            }
-                
-         }
-         i++
-        }
-     if(!isAdminFound){
-                       alert('Email ou mot de passe incorrect')
-        }
+        test(inputMailAdmin,inputMdpAdmin,admin)
     },500)
 })
 let inputMailCustomer = document.getElementById('input-mail-customer')
@@ -70,41 +75,6 @@ btnCustomer.addEventListener('click',function(){
     inputVide(inputMailCustomer)
     inputVide(inputMdpCustomer)
     setTimeout(function(){
-        let i=0
-        let isCustomerFound = false
-        while(i < customer.length){
-            if(inputMailCustomer.value==customer[i].email){
-               if (inputMdpCustomer.value==customer[i].mdp){
-                alert('Bievenue'+' '+inputMailCustomer.value) 
-                isCustomerFound = true
-                break
-            }
-                
-         }
-         i++
-        }
-     if(!isCustomerFound){
-                       alert('Email ou mot de passe incorrect')
-                    }
+        test(inputMailCustomer,inputMdpCustomer,customer)
                 },500)
             })
-    //     while(i < admin.length){
-//     if(inputMailAdmin.value==admin[i].email && inputMdpAdmin.value==admin[i].mdp){
-            
-//         alert('Bievenue'+' '+inputMailAdmin.value)
-//         break
-//  }
-//  else if(inputMailAdmin.value!==admin[i].email || inputMdpAdmin.value!==admin[i].mdp){
-//                 alert('Email ou mot de passe incorrect')
-//                 break
-// }
-// i++
-// }
-// })
-
-    
-// });
-// }) 
-
-
-
