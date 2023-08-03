@@ -76,12 +76,12 @@ input{
     position: relative;
     display: flex;
 }
-.head h6{
+ h6{
     margin: 0;
     margin-bottom: 50px;
     font-size: 18px;
 }
-.head h2{
+ h2{
     position: absolute;
     right: 0;
     color: gray;
