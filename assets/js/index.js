@@ -46,19 +46,20 @@ function inputVide(input){
         input.style.border="solid 1px green"
     }
 }
-let message
-
+let messageAdmin = document.querySelector('.message-admin')
+let messageCustomer = document.querySelector('.message-customer')
 let container1 = document.querySelector('.container-item1')
-function createMessage(container){
+// function createMessage(container){
 
-    message = document.createElement('div')
-    message.classList.add('message')
-    container.appendChild(message)
-}
-function afficheMessage(text){
-     message.innerHTML=text
-}
-let success = "bienvenue"
+//     message = document.createElement('div')
+//     message.classList.add('message')
+
+//     container.appendChild(message)
+// }
+// function afficheMessage(text){
+//      message.innerHTML+=text +'<button id="btn-ok">Ok</button>'
+// }
+let text = document.querySelectorAll('.text')
 let  isAdminFound = false
 function test (email,mdp,list){
     
@@ -67,24 +68,37 @@ function test (email,mdp,list){
     // isAdminFound=false    
    
     list.forEach(element =>{
-        if(email.value==element.email){
-           if (mdp.value==element.mdp){
-                mesTrue = `Bienvenue ${email.value}`
-               afficheMessage(mesTrue)
-
-            isAdminFound = true
-        }
+        text.forEach(t=>{
+            if(email.value==element.email){
+            if (mdp.value==element.mdp){
+                    t.innerHTML = `Bienvenue ${email.value}` 
+                    isAdminFound = true
+                }
+                
+            }
             
-     }
-        
-    });
-    if(!isAdminFound){
-        // alert('Email ou mot de passe incorrect')
-        mesFalse = "Email ou mot de passe incorrect"
-        afficheMessage(mesFalse)
-    }
+            if(!isAdminFound){
+                // alert('Email ou mot de passe incorrect') 
+                t.innerHTML = "Email ou mot de passe incorrect"
+            // afficheMessage(mesFalse)
+            }
+         });
+    })
     
-    }
+}
+let btnOk = []
+btnOk=document.querySelectorAll('.btn-ok')
+function clickOk(message){
+    btnOk.forEach(ok=>{
+        ok.addEventListener('click',function(){
+            message.style.display="none" 
+            console.log('ok');
+        })
+    })
+}
+clickOk(messageAdmin)
+clickOk(messageCustomer)
+
 
 let inputMailAdmin = document.getElementById('input-mail')
 let inputMdpAdmin = document.getElementById('input-mdp')
@@ -97,16 +111,15 @@ btnAdmin.addEventListener('click',function(){
         inputVide(inputMdpAdmin)    
     }
     else {
-        createMessage(container1)
+        messageAdmin.style.display="flex"
+        // createMessage(container1)
         setTimeout(function(){
             test(inputMailAdmin,inputMdpAdmin,admin)
-    
         },50)
-    }
-    
-    
-  
+    } 
+     
 })
+
 let inputMailCustomer = document.getElementById('input-mail-customer')
 let inputMdpCustomer = document.getElementById('input-mdp-customer')
 let mdpBtnCustomer= document.querySelector('.btn-mdp-customer')
@@ -119,8 +132,9 @@ btnCustomer.addEventListener('click',function(){
         inputVide(inputMdpCustomer)    
     }
     else{
-        createMessage(container2)
-        message.style.color="var(--bleu)"
+        messageCustomer.style.display="flex"
+        // createMessage(container2)
+        messageCustomer.style.color="var(--bleu)"
      
         setTimeout(function(){
             test(inputMailCustomer,inputMdpCustomer,customer)

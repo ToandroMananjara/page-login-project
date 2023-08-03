@@ -185,7 +185,7 @@ form{
     right: 0;
 }
 
-.message{
+.message-admin,.message-customer{
     width: 80%;
     height: 100px;
     /* background: #000; */
@@ -193,9 +193,19 @@ form{
     border-radius: 20px;
     box-shadow: 5px 5px 5px grey;
     z-index: 10;
-    display: flex;
+    display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.container-item1 .message-admin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.container-item2 .message-customer{
     position: absolute;
     top: 50%;
     left: 50%;
