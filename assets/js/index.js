@@ -96,7 +96,7 @@ btnAdmin.addEventListener('click',function(){
         inputVide(inputMailAdmin)
         inputVide(inputMdpAdmin)    
     }
-    else if ((inputMailAdmin.value!=="") && (inputMailAdmin.value!=="")) {
+    else {
         createMessage(container1)
         setTimeout(function(){
             test(inputMailAdmin,inputMdpAdmin,admin)
