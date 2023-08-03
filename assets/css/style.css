@@ -41,7 +41,28 @@ input{
     margin-bottom: 20px;
     padding: 0 10px;
 }
-
+.mdp-admin,.mdp-customer{
+    position: relative;
+    width: 100%;
+}
+.mdp-admin input{
+    width: 220px;
+}
+.mdp-admin .btn-mdp-admin{
+    position: absolute;
+    top: 20px;
+    right:10px;
+    z-index: 2;
+}
+.mdp-customer input{
+    width: 220px;
+}
+.mdp-customer i{
+    color: gray;
+    position: absolute;
+    top: 20px;
+    right:10px;
+}
 .container-item2 .head h2{
     color: var(--blanc);
 }
