@@ -13,7 +13,7 @@
     font-family: poppin;
     text-decoration: none;
     list-style: none;
-    margin: 0;
+    
     padding: 0;
 }
 
@@ -43,6 +43,11 @@ input{
     margin-top: 5px;
     margin-bottom: 20px;
     padding: 0 10px;
+}
+.head h6{
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 18px;
 }
 .head h2{
     position: absolute;
@@ -88,10 +93,7 @@ input{
     color: var(--blanc);
     background: var(--bleu);
 }
-.admin,.customer{
-    margin-bottom: 50px;
-    font-size: 18px;
-}
+
 .admin{
     color: var(--bleu);
 }
