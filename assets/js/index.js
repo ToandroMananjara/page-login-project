@@ -92,11 +92,11 @@ let mdpBtnAdmin = document.querySelector('.btn-mdp-admin')
 let btnAdmin = document.getElementById('btn-admin')
 mdpToggle(mdpBtnAdmin,inputMdpAdmin)
 btnAdmin.addEventListener('click',function(){
-    if ((inputMailAdmin.value="") || (inputMailAdmin.value=="")){
+    if ((inputMailAdmin.value=="") || (inputMailAdmin.value=="")){
         inputVide(inputMailAdmin)
         inputVide(inputMdpAdmin)    
     }
-    else {
+    else if ((inputMailAdmin.value!=="") && (inputMailAdmin.value!=="")) {
         createMessage(container1)
         setTimeout(function(){
             test(inputMailAdmin,inputMdpAdmin,admin)
@@ -114,7 +114,7 @@ let container2 = document.querySelector('.container-item2')
 let btnCustomer=document.getElementById('btn-customer')
 mdpToggle(mdpBtnCustomer,inputMdpCustomer)
 btnCustomer.addEventListener('click',function(){
-    if ((inputMailCustomer.value="") || (inputMailCustomer.value=="")){
+    if ((inputMailCustomer.value=="") || (inputMailCustomer.value=="")){
         inputVide(inputMailCustomer)
         inputVide(inputMdpCustomer)    
     }
