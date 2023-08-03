@@ -94,6 +94,9 @@ input{
 .admin{
     color: var(--bleu);
 }
+.head h2{
+    margin-top: 20px;
+}
 
 .container-item1 ul i{
     width: 20px;
@@ -181,4 +184,5 @@ form{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
