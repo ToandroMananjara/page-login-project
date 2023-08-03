@@ -41,24 +41,9 @@ input{
     margin-bottom: 20px;
     padding: 0 10px;
 }
-.head h6{
-    margin: 0;
-    margin-bottom: 50px;
-    font-size: 18px;
-}
-.head h2{
-    position: absolute;
-    right: 0;
-    color: gray;
-    opacity:0.2;  
-    margin-top: 20px;
-}
+
 .container-item2 .head h2{
     color: var(--blanc);
-}
-.head{
-    position: relative;
-    display: flex;
 }
 .container{
     width: 100%;
@@ -70,10 +55,7 @@ input{
     align-items: center;    
 }
 .container-item1,.container-item2{
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    */
+
     position: relative; 
     width: 400px;
     border-radius: 30px;
@@ -90,7 +72,22 @@ input{
     color: var(--blanc);
     background: var(--bleu);
 }
-
+.head{
+    position: relative;
+    display: flex;
+}
+.head h6{
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.head h2{
+    position: absolute;
+    right: 0;
+    color: gray;
+    margin-top: 20px;
+    opacity: 0.2;
+}
 .admin{
     color: var(--bleu);
 }
