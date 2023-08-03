@@ -22,6 +22,17 @@ const customer = [
         mdp:"rakoto1234"
     }
 ];
+
+function inputVide(input){
+    if(input.value===""){
+        input.style.border="solid 1px red"
+        input.addEventListener('keyup',function(){
+        input.style.border="solid 1px green"    
+        })
+    }else if(input.value!=""){
+        input.style.border="solid 1px green"
+    }
+}
 let message
 
 let container1 = document.querySelector('.container-item1')
@@ -41,6 +52,7 @@ function test (email,mdp,list){
     let mesTrue
     let mesFalse
     // isAdminFound=false    
+   
     list.forEach(element =>{
         if(email.value==element.email){
            if (mdp.value==element.mdp){
@@ -60,39 +72,42 @@ function test (email,mdp,list){
     }
     
     }
-function inputVide(input){
-    if(input.value===""){
-        input.style.border="solid 1px red"
-        input.addEventListener('keyup',function(){
-        input.style.border="solid 1px green"    
-        })
-    }else if(input.value!=""){
-        input.style.border="solid 1px green"
-    }
-}
+
 let inputMailAdmin = document.getElementById('input-mail')
 let inputMdpAdmin = document.getElementById('input-mdp')
 let btnAdmin = document.getElementById('btn-admin')
 btnAdmin.addEventListener('click',function(){
-    createMessage(container1)
-    inputVide(inputMailAdmin)
-    inputVide(inputMdpAdmin)
-    setTimeout(function(){
-        test(inputMailAdmin,inputMdpAdmin,admin)
-
-    },50)
+    if ((inputMailAdmin.value="") || (inputMailAdmin.value=="")){
+        inputVide(inputMailAdmin)
+        inputVide(inputMdpAdmin)    
+    }
+    else {
+        createMessage(container1)
+        setTimeout(function(){
+            test(inputMailAdmin,inputMdpAdmin,admin)
+    
+        },50)
+    }
+    
+    
+  
 })
 let inputMailCustomer = document.getElementById('input-mail-customer')
 let inputMdpCustomer = document.getElementById('input-mdp-customer')
 let container2 = document.querySelector('.container-item2')
 let btnCustomer=document.getElementById('btn-customer')
 btnCustomer.addEventListener('click',function(){
-    createMessage(container2)
-    message.style.color="var(--bleu)"
-    // message.style.boxShadow =" 5px 5px 5px grey";
-    inputVide(inputMailCustomer)
-    inputVide(inputMdpCustomer)
-    setTimeout(function(){
-        test(inputMailCustomer,inputMdpCustomer,customer)
-                },50)
-            })
+    if ((inputMailCustomer.value="") || (inputMailCustomer.value=="")){
+        inputVide(inputMailCustomer)
+        inputVide(inputMdpCustomer)    
+    }
+    else{
+        createMessage(container2)
+        message.style.color="var(--bleu)"
+     
+        setTimeout(function(){
+            test(inputMailCustomer,inputMdpCustomer,customer)
+                    },50)
+        
+    }
+})
