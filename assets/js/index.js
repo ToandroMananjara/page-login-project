@@ -92,7 +92,6 @@ let btnOkCustomer = document.querySelector('.btn-ok-customer')
 function clickOk(btn,message){
         btn.addEventListener('click',function(){
             message.style.display="none" 
-            console.log('ok');
         })
 }
 clickOk(btnOkAdmin,messageAdmin)

@@ -46,7 +46,7 @@ input{
     width: 100%;
 }
 .mdp-admin input{
-    width: 220px;
+    width: 260px;
 }
 .mdp-admin .btn-mdp-admin{
     position: absolute;
@@ -55,7 +55,7 @@ input{
     z-index: 2;
 }
 .mdp-customer input{
-    width: 220px;
+    width: 260px;
 }
 .mdp-customer i{
     color: gray;
@@ -153,7 +153,7 @@ form{
     align-items: center;
 }
 .form{
-    width: 240px;
+    width: 280px;
     display:flex;
     flex-direction: column;
 }
