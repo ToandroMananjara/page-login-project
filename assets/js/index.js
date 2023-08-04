@@ -1,27 +1,4 @@
-const admin = [
-    {
-        email:"mahasalotra@gmail.com",
-        mdp: "123456"
-    },
-    {
-        email:"rakotomaditra@gmail.com",
-        mdp:"rakoto123"
-    }
-];
-const customer = [
-    {
-        email:"customer1@gmail.com",
-        mdp: "123456"
-    },
-    {
-        email:"customer2@gmail.com",
-        mdp:"rakoto123"
-    },
-    {
-        email:"customer3@gmail.com",
-        mdp:"rakoto1234"
-    }
-];
+
 function mdpToggle(btn,inputMdp){
     btn.addEventListener('click',function(){
         if(btn.innerHTML=='<i class="fa-regular fa-eye"></i>' ){
@@ -71,7 +48,7 @@ function test (email,mdp,list){
         text.forEach(t=>{
             if(email.value==element.email){
             if (mdp.value==element.mdp){
-                    t.innerHTML = `Bienvenue ${email.value}` 
+                    t.innerHTML = `Bienvenue ${element.userName} !` 
                     isAdminFound = true
                 }
                 
@@ -79,7 +56,7 @@ function test (email,mdp,list){
             
             if(!isAdminFound){
                 // alert('Email ou mot de passe incorrect') 
-                t.innerHTML = "Email ou mot de passe incorrect"
+                t.innerHTML = "Email ou mot de passe incorrect !"
             // afficheMessage(mesFalse)
             }
          });
@@ -104,18 +81,21 @@ let mdpBtnAdmin = document.querySelector('.btn-mdp-admin')
 let btnAdmin = document.getElementById('btn-admin')
 mdpToggle(mdpBtnAdmin,inputMdpAdmin)
 btnAdmin.addEventListener('click',function(){
-    if ((inputMailAdmin.value=="") || (inputMailAdmin.value=="")){
-        inputVide(inputMailAdmin)
-        inputVide(inputMdpAdmin)    
-    }
-    else {
-        messageAdmin.style.display="flex"
-        // createMessage(container1)
-        setTimeout(function(){
-            test(inputMailAdmin,inputMdpAdmin,admin)
-        },50)
-    } 
-     
+    fetch("./assets/user-admin.json")
+    .then(res => res.json())
+    .then(admin => {
+        if ((inputMailAdmin.value=="") || (inputMailAdmin.value=="")){
+            inputVide(inputMailAdmin)
+            inputVide(inputMdpAdmin)    
+        }
+        else {
+            messageAdmin.style.display="flex"
+            // createMessage(container1)
+            setTimeout(function(){
+                test(inputMailAdmin,inputMdpAdmin,admin)
+            },50)
+        } 
+    })
 })
 
 let inputMailCustomer = document.getElementById('input-mail-customer')
@@ -125,18 +105,23 @@ let container2 = document.querySelector('.container-item2')
 let btnCustomer=document.getElementById('btn-customer')
 mdpToggle(mdpBtnCustomer,inputMdpCustomer)
 btnCustomer.addEventListener('click',function(){
-    if ((inputMailCustomer.value=="") || (inputMailCustomer.value=="")){
-        inputVide(inputMailCustomer)
-        inputVide(inputMdpCustomer)    
-    }
-    else{
-        messageCustomer.style.display="flex"
-        // createMessage(container2)
-        messageCustomer.style.color="var(--bleu)"
-     
-        setTimeout(function(){
-            test(inputMailCustomer,inputMdpCustomer,customer)
-                    },50)
-        
-    }
+    fetch("./assets/user-customer.json")
+    .then(resCust=>resCust.json() )
+    .then(customer =>{
+        if ((inputMailCustomer.value=="") || (inputMailCustomer.value=="")){
+            inputVide(inputMailCustomer)
+            inputVide(inputMdpCustomer)    
+        }
+        else{
+            messageCustomer.style.display="flex"
+            // createMessage(container2)
+            messageCustomer.style.color="var(--bleu)"
+         
+            setTimeout(function(){
+                test(inputMailCustomer,inputMdpCustomer,customer)
+                        },50)
+            
+        }
+    } )
+    
 })

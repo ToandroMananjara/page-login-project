@@ -1,0 +1,12 @@
+ [
+    {
+        "userName":"Mahasalotra",
+        "email":"mahasalotra@gmail.com",
+         "mdp": "123456"
+    },
+    {   
+        "userName":"Rakoto Maditra",
+        "email":"rakotomaditra@gmail.com",
+        "mdp" :"rakoto123"
+    }
+]

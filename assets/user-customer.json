@@ -1,0 +1,17 @@
+[
+    {
+        "userName":"Customer-1",
+        "email" :"customer1@gmail.com",
+        "mdp": "123456"
+    },
+    {   
+        "userName":"Customer-2",
+        "email":"customer2@gmail.com",
+        "mdp":"rakoto123"
+    },
+    {   
+        "userName":"Customer-3",
+        "email":"customer3@gmail.com",
+        "mdp":"rakoto1234"
+    }
+]

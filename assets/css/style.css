@@ -37,10 +37,12 @@ input{
     height: 50px;
     border: none;
     border-radius: 20px;
+    outline: none;    
     margin-top: 5px;
     margin-bottom: 20px;
     padding: 0 10px;
 }
+
 .mdp-admin,.mdp-customer{
     position: relative;
     width: 100%;
@@ -82,7 +84,7 @@ input{
     border-radius: 30px;
     box-shadow: 0 20px 30px 0 var(--shadow);
     margin: 10px; 
-    padding: 20px;
+    padding: 30px 20px;
 }
 .container-item1{
     color: rgb(81, 76, 76);
@@ -219,4 +221,6 @@ form{
     padding: 5px 10px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
+
