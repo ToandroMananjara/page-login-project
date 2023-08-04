@@ -1,5 +1,6 @@
 
 function mdpToggle(btn,inputMdp){
+ 
     btn.addEventListener('click',function(){
         if(btn.innerHTML=='<i class="fa-regular fa-eye"></i>' ){
             btn.innerHTML='<i class="fa-regular fa-eye-slash"></i>'
@@ -10,7 +11,14 @@ function mdpToggle(btn,inputMdp){
             btn.innerHTML='<i class="fa-regular fa-eye"></i>'
             inputMdp.type = "password"
         }
-        inputMdp.focus()
+        if(inputMdp.value==""){
+            console.log('vide');
+        }
+        
+        else if(inputMdp.value !==""){
+            inputMdp.focus()
+            console.log('non-vide');
+        }
     })
     
 }
