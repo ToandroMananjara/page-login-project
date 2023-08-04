@@ -10,6 +10,7 @@ function mdpToggle(btn,inputMdp){
             btn.innerHTML='<i class="fa-regular fa-eye"></i>'
             inputMdp.type = "password"
         }
+        inputMdp.focus()
     })
     
 }
@@ -47,18 +48,20 @@ function test (email,mdp,list){
     list.forEach(element =>{
         text.forEach(t=>{
             if(email.value==element.email){
-            if (mdp.value==element.mdp){
-                    t.innerHTML = `Bienvenue ${element.userName} !` 
+                if(mdp.value==element.mdp){            
                     isAdminFound = true
+                    t.innerHTML = `Bienvenue ${element.userName} !` 
                 }
-                
-            }
+            } 
+            
+    
             
             if(!isAdminFound){
                 // alert('Email ou mot de passe incorrect') 
                 t.innerHTML = "Email ou mot de passe incorrect !"
             // afficheMessage(mesFalse)
             }
+
          });
     })
     
@@ -67,12 +70,12 @@ function test (email,mdp,list){
 let btnOkAdmin = document.querySelector('.btn-ok-Admin')
 let btnOkCustomer = document.querySelector('.btn-ok-customer')
 function clickOk(btn,message){
-        btn.addEventListener('click',function(){
-            message.style.display="none" 
-        })
+    btn.addEventListener('click',function(){
+        message.style.display="none" 
+    })
 }
-clickOk(btnOkAdmin,messageAdmin)
-clickOk(btnOkCustomer,messageCustomer)
+
+
 
 
 let inputMailAdmin = document.getElementById('input-mail')
@@ -92,7 +95,9 @@ btnAdmin.addEventListener('click',function(){
             messageAdmin.style.display="flex"
             // createMessage(container1)
             setTimeout(function(){
+                
                 test(inputMailAdmin,inputMdpAdmin,admin)
+                clickOk(btnOkAdmin,messageAdmin)
             },50)
         } 
     })
@@ -119,7 +124,8 @@ btnCustomer.addEventListener('click',function(){
          
             setTimeout(function(){
                 test(inputMailCustomer,inputMdpCustomer,customer)
-                        },50)
+                clickOk(btnOkCustomer,messageCustomer)
+            },50)
             
         }
     } )
